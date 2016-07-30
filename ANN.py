@@ -23,10 +23,11 @@ def plotSynapses(neuronPositions, synapses):
     #print(len(neuronPositions[0]))
     for i in range(len(neuronPositions[0])):
         for j in range(len(neuronPositions[0])):
+            w = int(10*abs(synapses[i][j]))+1
             if (synapses [i][j] < 0):
-                plt.pyplot.plot([neuronPositions[0,i],neuronPositions[0,j]],[neuronPositions[1,i],neuronPositions[1,j]], color=[0.8,0.8,0.8])
+                plt.pyplot.plot([neuronPositions[0,i],neuronPositions[0,j]],[neuronPositions[1,i],neuronPositions[1,j]], color=[0.8,0.8,0.8], linewidth= w)
             else:
-                plt.pyplot.plot([neuronPositions[0,i],neuronPositions[0,j]],[neuronPositions[1,i],neuronPositions[1,j]], color=[0,0,0])
+                plt.pyplot.plot([neuronPositions[0,i],neuronPositions[0,j]],[neuronPositions[1,i],neuronPositions[1,j]], color=[0,0,0], linewidth= w)
             
 numNeurons = 10
         
