@@ -32,4 +32,6 @@ plt.pyplot.plot(np[0], np[1], 'ko', markerfacecolor=[1,1,1], markersize=18)
 plt.pyplot.axis([-1, 1, -1, 1])
 plt.pyplot.show()
 
-synapses = =MatrixCreate(numNeurons,numNeurons)
+synapses = MatrixCreate(numNeurons,numNeurons)
+synapses = [[random.uniform(-1, 1) for y in range(len(synapses[x]))] for x in range(len(synapses))]
+print(synapses)
