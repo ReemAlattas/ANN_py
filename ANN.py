@@ -18,6 +18,12 @@ def computePosition(numNeurons):
         angle = angle + angleUpdate
     
     return neuronPositions
+    
+def plotSynapses(neuronPositions):
+    #print(len(neuronPositions[0]))
+    for i in range(len(neuronPositions[0])):
+        for j in range(len(neuronPositions[0])):
+            plt.pyplot.plot([neuronPositions[0,i],neuronPositions[0,j]],[neuronPositions[1,i],neuronPositions[1,j]])
 
 numNeurons = 10
         
@@ -35,3 +41,5 @@ plt.pyplot.show()
 synapses = MatrixCreate(numNeurons,numNeurons)
 synapses = [[random.uniform(-1, 1) for y in range(len(synapses[x]))] for x in range(len(synapses))]
 print(synapses)
+
+plotSynapses(np)
