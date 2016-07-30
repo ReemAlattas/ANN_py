@@ -19,12 +19,15 @@ def computePosition(numNeurons):
     
     return neuronPositions
     
-def plotSynapses(neuronPositions):
+def plotSynapses(neuronPositions, synapses):
     #print(len(neuronPositions[0]))
     for i in range(len(neuronPositions[0])):
         for j in range(len(neuronPositions[0])):
-            plt.pyplot.plot([neuronPositions[0,i],neuronPositions[0,j]],[neuronPositions[1,i],neuronPositions[1,j]])
-
+            if (synapses [i][j] < 0):
+                plt.pyplot.plot([neuronPositions[0,i],neuronPositions[0,j]],[neuronPositions[1,i],neuronPositions[1,j]], color=[0.8,0.8,0.8])
+            else:
+                plt.pyplot.plot([neuronPositions[0,i],neuronPositions[0,j]],[neuronPositions[1,i],neuronPositions[1,j]], color=[0,0,0])
+            
 numNeurons = 10
         
 neuronValues = MatrixCreate(50,numNeurons)
@@ -42,4 +45,4 @@ synapses = MatrixCreate(numNeurons,numNeurons)
 synapses = [[random.uniform(-1, 1) for y in range(len(synapses[x]))] for x in range(len(synapses))]
 print(synapses)
 
-plotSynapses(np)
+plotSynapses(np, synapses)
