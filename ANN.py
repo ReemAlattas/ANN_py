@@ -21,7 +21,7 @@ def computePosition(numNeurons):
 
 numNeurons = 10
         
-neuronValues=MatrixCreate(50,numNeurons)
+neuronValues = MatrixCreate(50,numNeurons)
 for y in range(len(neuronValues[0])):
     neuronValues[0][y] = random.random()
        
@@ -31,3 +31,5 @@ print(np)
 plt.pyplot.plot(np[0], np[1], 'ko', markerfacecolor=[1,1,1], markersize=18)
 plt.pyplot.axis([-1, 1, -1, 1])
 plt.pyplot.show()
+
+synapses = =MatrixCreate(numNeurons,numNeurons)
