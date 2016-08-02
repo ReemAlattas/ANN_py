@@ -4,6 +4,8 @@ import copy
 import matplotlib as plt
 import math
 
+numNeurons = 10
+
 def MatrixCreate(rows, cols):
     matrix = numpy.zeros(shape=(rows, cols))
     return matrix
@@ -29,7 +31,21 @@ def plotSynapses(neuronPositions, synapses):
             else:
                 plt.pyplot.plot([neuronPositions[0,i],neuronPositions[0,j]],[neuronPositions[1,i],neuronPositions[1,j]], color=[0,0,0], linewidth= w)
             
-numNeurons = 10
+#def Update (neuronValues, synapses, i):
+#    sum = 0 
+#    for j in range(10):
+#        for k in range(10)
+#        temp = neuronValues[i-1][j] * synapses[i][j]
+#        sum = sum + temp
+#    if (sum < 0):
+#        sum = 0
+#    if (sum > 1):
+#        sum = 1
+#    print (sum)
+#    neuronValues[i]
+#    return neuronValues
+
+
         
 neuronValues = MatrixCreate(50,numNeurons)
 for y in range(len(neuronValues[0])):
@@ -45,5 +61,8 @@ plt.pyplot.show()
 synapses = MatrixCreate(numNeurons,numNeurons)
 synapses = [[random.uniform(-1, 1) for y in range(len(synapses[x]))] for x in range(len(synapses))]
 print(synapses)
+
+for i in range(1, 50):
+    neuronValues = Update (neuronValues, synapses, i)
 
 plotSynapses(np, synapses)
