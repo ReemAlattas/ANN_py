@@ -53,9 +53,9 @@ for y in range(len(neuronValues[0])):
 np = computePosition(numNeurons)
 print(np) 
 
-plt.pyplot.plot(np[0], np[1], 'ko', markerfacecolor=[1,1,1], markersize=18)
-plt.pyplot.axis([-1, 1, -1, 1])
-plt.pyplot.show()
+#plt.pyplot.plot(np[0], np[1], 'ko', markerfacecolor=[1,1,1], markersize=18)
+#plt.pyplot.axis([-1, 1, -1, 1])
+#plt.pyplot.show()
 
 synapses = MatrixCreate(numNeurons,numNeurons)
 synapses = [[random.uniform(-1, 1) for y in range(len(synapses[x]))] for x in range(len(synapses))]
@@ -65,4 +65,9 @@ for i in range(1, 50):
     neuronValues = Update (neuronValues, synapses, i)
 print (neuronValues)
 
-plotSynapses(np, synapses)
+plt.pyplot.xlabel('Neuron')
+plt.pyplot.ylabel('Time Step')
+plt.pyplot.imshow(neuronValues, cmap=plt.cm.gray, aspect='auto', interpolation='nearest')
+plt.pyplot.show()
+
+#plotSynapses(np, synapses)
