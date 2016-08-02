@@ -32,6 +32,7 @@ def plotSynapses(neuronPositions, synapses):
                 plt.pyplot.plot([neuronPositions[0,i],neuronPositions[0,j]],[neuronPositions[1,i],neuronPositions[1,j]], color=[0,0,0], linewidth= w)
             
 def Update (neuronValues, synapses, i):
+    temp = 0
     sum = 0 
     for j in range(numNeurons):
         for k in range(numNeurons):
